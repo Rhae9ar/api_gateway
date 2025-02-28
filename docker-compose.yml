@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile-fastapi
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - fastapi
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"

@@ -1,0 +1,3 @@
+scrape_configs:
+  - targets: ['fastapi:8000']
+    metrics_path: /metrics

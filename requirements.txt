@@ -1,0 +1,7 @@
+fastapi 
+redis 
+pyjwt 
+uvicorn 
+python-dotenv
+pytest
+prometheus-client
